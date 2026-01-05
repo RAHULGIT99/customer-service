@@ -18,11 +18,14 @@ const Navbar = ({ isAuthenticated, onLogout }) => {
       <div className="navbar-links">
         {!isAuthenticated ? (
           <>
+            <Link to="/about" className="nav-link">About</Link>
             <Link to="/login" className="nav-link">Login</Link>
             <Link to="/signup" className="nav-btn btn-primary">Sign Up</Link>
           </>
         ) : (
           <>
+            <Link to="/voice" className="nav-link">Voice</Link>
+            <Link to="/about" className="nav-link">About</Link>
             <Link to="/chat" className="nav-link">Chat</Link>
             <button onClick={handleLogout} className="nav-btn btn-outline">
               Logout

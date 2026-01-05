@@ -75,7 +75,7 @@ const VerifyOtp = ({ onAuthSuccess }) => {
         if (onAuthSuccess) {
           onAuthSuccess({ token: data.token, user: data.user });
         }
-        redirectTimeoutRef.current = setTimeout(() => navigate('/chat'), 1200);
+        redirectTimeoutRef.current = setTimeout(() => navigate('/selection'), 1200);
       } else if (response.status === 400) {
         setError(data.message || 'Invalid OTP');
       } else {

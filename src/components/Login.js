@@ -36,7 +36,7 @@ const Login = ({ onAuthSuccess }) => {
         if (onAuthSuccess) {
           onAuthSuccess({ token: data.token, user: data.user });
         }
-        navigate('/chat');
+        navigate('/selection');
       } else if (response.status === 400 || response.status === 401) {
         setError(data.message || 'Invalid credentials');
       } else {

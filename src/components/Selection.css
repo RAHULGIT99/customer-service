@@ -1,0 +1,160 @@
+/* Selection.css */
+.selection-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.selection-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.selection-header h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.selection-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Cards Container */
+.selection-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* Individual Card */
+.selection-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.selection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+  border-color: #7c3aed;
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  background: #f5f3ff;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selection-card h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.selection-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  min-height: 60px; /* Align buttons */
+}
+
+.card-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 100%;
+}
+
+.selection-card:hover .card-btn {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about-section {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border-left: 5px solid #7c3aed;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.about-content h3 {
+  color: #7c3aed;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-content h3::before {
+  content: 'ℹ️';
+  font-size: 1.2rem;
+}
+
+.about-content p {
+  color: #334155;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .selection-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .selection-header h1 {
+    font-size: 2rem;
+  }
+}

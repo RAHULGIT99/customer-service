@@ -1,20 +1,39 @@
+/* App Container Styles */
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
 }
 
+/* Decorative Background Elements */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: var(--gradient-glow);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Logo Animation */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  filter: drop-shadow(0 4px 20px rgba(147, 51, 234, 0.3));
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-float 6s ease-in-out infinite;
   }
 }
 
+/* Modern Header */
 .App-header {
-  background-color: #282c34;
+  background: var(--gradient-primary);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +41,73 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: rotate-bg 20s linear infinite;
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary-300);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition-base);
 }
 
-@keyframes App-logo-spin {
+.App-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-300);
+  transition: width var(--transition-base);
+}
+
+.App-link:hover::after {
+  width: 100%;
+}
+
+@keyframes App-logo-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate-bg {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }

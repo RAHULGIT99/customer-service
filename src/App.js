@@ -6,6 +6,9 @@ import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import CoverPage from './components/CoverPage';
 import VerifyOtp from './components/VerifyOtp';
+import VoiceAgent from './components/VoiceAgent';
+import Selection from './components/Selection';
+import About from './components/About';
 
 const PrivateRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
@@ -53,9 +56,12 @@ function App() {
     <Router>
       <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<CoverPage />} />
+        <Route path="/" element={<CoverPage isAuthenticated={isAuthenticated} />} />
         <Route path="/login" element={<Login onAuthSuccess={handleAuthSuccess} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/selection" element={<PrivateRoute isAuthenticated={isAuthenticated}><Selection /></PrivateRoute>} />
+        <Route path="/voice" element={<VoiceAgent />} />
+        <Route path="/about" element={<About />} />
         <Route path="/verify-otp" element={<VerifyOtp onAuthSuccess={handleAuthSuccess} />} />
         <Route
           path="/chat"
