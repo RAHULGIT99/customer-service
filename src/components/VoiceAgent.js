@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './VoiceAgent.css';
 
-const BASE_URL = "http://127.0.0.1:8000"; 
+const BASE_URL = "https://twilio-backend-8evv.onrender.com"; 
 
 const AUTH_PASSWORD = "my_set_password";
 const COOLDOWN_DURATION = 300; // 5 minutes in seconds
